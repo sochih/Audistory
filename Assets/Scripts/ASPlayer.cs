@@ -8,11 +8,20 @@ namespace AudiStory {
 
     public class ASPlayer : MonoBehaviour
     {
-        public static ASPlayer Instance; 
+        public static ASPlayer Instance;
 
 
-        // Use this for initialization
-        void Start()
+		private void Awake()
+		{
+            if (Instance != null){
+                Destroy(gameObject);
+            }else {
+                Instance = this; 
+            }
+		}
+
+		// Use this for initialization
+		void Start()
         {
 
         }
