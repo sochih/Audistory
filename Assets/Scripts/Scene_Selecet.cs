@@ -8,6 +8,8 @@ public class Scene_Selecet : SceneScriptBase {
 
     // Use this for initialization
 
+
+
     public InputField taskNameInputField;
     public Button nextSceneBtn; 
 
@@ -17,7 +19,6 @@ public class Scene_Selecet : SceneScriptBase {
 
 	// Update is called once per frame
 	void Update () {
-
 
 	}
 
@@ -33,6 +34,5 @@ public class Scene_Selecet : SceneScriptBase {
         if (nextSceneBtn.interactable != valid ){
             nextSceneBtn.interactable = valid;
         }
-
     }
 }

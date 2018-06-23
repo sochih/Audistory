@@ -1,9 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AudiStory; 
+using AudiStory;
+
+
 
 public class Scene_Step1 : SceneScriptBase {
+
+
+    public GameObject conversationSqure_con;
+
+    public GameObject conversationSqure_template; 
+
+
+
+
+
 
 	// Use this for initialization
 	void Start () {
