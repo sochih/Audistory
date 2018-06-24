@@ -4,14 +4,7 @@ using UnityEngine;
 using DentedPixel;
 
 
-public enum Character
-{
-    FATHER = 0,
-    MOTHER = 1,
-    BROTHER = 2,
-    SISTER = 3,
-    GRANDMA = 4
-}
+
 
 public enum Side
 {
