@@ -38,6 +38,9 @@ public class ASGlobal : MonoBehaviour {
             {ObjectOption.FAN , FAN}
         };
 
+
+
+
 	}
     public ASTask taskData; 
     public static ASGlobal Instance;

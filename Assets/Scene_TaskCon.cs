@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scene_TaskCon : MonoBehaviour {
+public class Scene_TaskCon : SceneScriptBase {
 
     // Use this for initialization
 
@@ -16,6 +16,7 @@ public class Scene_TaskCon : MonoBehaviour {
         foreach (var c in ASGlobal.Instance.taskData.step1audios){
 
             Side side = (Side)(i % 2);
+            i++;
             s.append(charactorMove.ShowCharacter(c.character,side));
 
             s.append(() =>
@@ -28,6 +29,10 @@ public class Scene_TaskCon : MonoBehaviour {
             s.append(charactorMove.HideCharacter(c.character,side));
 
         }
+        s.append(() =>
+        {
+            NextScene("07_TaskQuestion");
+        });
 
         //s.append()
 

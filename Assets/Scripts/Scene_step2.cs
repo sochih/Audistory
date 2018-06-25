@@ -32,8 +32,10 @@ public class Scene_step2 : SceneScriptBase {
             if (!o.isSet){
                 return; 
             }
+            Debug.Log(o.index + "-" + o.option);
             ASGlobal.Instance.taskData.step2data.Add(o.index, o.option);
         }
         NextScene("05_Step3");
     }
+
 }

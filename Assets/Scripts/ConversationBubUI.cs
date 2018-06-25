@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public enum Character
 {
-    MOTHER = 0,
-    FATHER = 1,
+    MOTHER = 1,
+    FATHER = 0,
     BROTHER = 2,
     SISTER = 3,
     GRANDMA = 4
@@ -45,9 +45,13 @@ public class ConversationBubUI : MonoBehaviour
     //public
 
     public Image main_record_img_btn; 
+    public Image playbtn; 
     public Sprite record_btn ;
     public Sprite stop_btn ;
     public Sprite rerecord_btn;
+
+    public Sprite enabled_play_btn; 
+
     public ConversationBubData conversationBub;
     public Text info_txt; 
     [HideInInspector]
@@ -132,6 +136,9 @@ public class ConversationBubUI : MonoBehaviour
             RARE.Instance.StopMicRecording(filename,(AudioClip audio, string name) => {
                 conversationBub.audioRecorder = new AudioRecorder() { audio = audio, name = name };
             });
+
+            playbtn.sprite = enabled_play_btn;
+
         }else {
             isRecording = true;
             RARE.Instance.StartMicRecording();
@@ -168,7 +175,10 @@ public class ConversationBubUI : MonoBehaviour
 
 
     public void CallDestroy (){
-        Destroy(gameObject);
+        if (!isRecording){
+            Destroy(gameObject);    
+        }
+
     }
 
 }

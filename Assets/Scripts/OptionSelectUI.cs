@@ -49,6 +49,7 @@ public class OptionSelectUI : MonoBehaviour {
         isSet = true;
         ObjectOption c = (ObjectOption)i;
         Sprite sprite;
+        option = c;
         objectSpriteDict.TryGetValue(c, out sprite);
         objectImage.sprite = sprite;
         objectImage.color = Color.white;

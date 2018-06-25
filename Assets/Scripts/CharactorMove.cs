@@ -19,7 +19,7 @@ public class CharactorMove : MonoBehaviour
     public Transform stopPositionL;
     public Transform startPositionR;
     public Transform stopPositionR;
-
+    float d = .8f;
     GameObject momR;
     GameObject dadR;
     GameObject sisR;
@@ -38,11 +38,11 @@ public class CharactorMove : MonoBehaviour
         Debug.Log("ss" + stopPositionL);
         if (s == Side.LEFT)
         {
-            return LeanTween.move(g, stopPositionL, 2f).setEase(LeanTweenType.easeOutQuad);
+            return LeanTween.move(g, stopPositionL, d).setEase(LeanTweenType.easeOutQuad);
         }
         else
         {
-            return LeanTween.move(g, stopPositionR, 2f).setEase(LeanTweenType.easeOutQuad);
+            return LeanTween.move(g, stopPositionR, d).setEase(LeanTweenType.easeOutQuad);
         }
 
     }
@@ -55,11 +55,11 @@ public class CharactorMove : MonoBehaviour
         Debug.Log("ss" + stopPositionL);
         if (s == Side.LEFT)
         {
-            return LeanTween.move(g, startPositionL, 2f).setEase(LeanTweenType.easeOutQuad);
+            return LeanTween.move(g, startPositionL, d).setEase(LeanTweenType.easeOutQuad);
         }
         else
         {
-            return LeanTween.move(g, startPositionR, 2f).setEase(LeanTweenType.easeOutQuad);
+            return LeanTween.move(g, startPositionR, d).setEase(LeanTweenType.easeOutQuad);
         }
 
     }
@@ -204,11 +204,6 @@ public class CharactorMove : MonoBehaviour
         //StartCoroutine(test());
     }
 
-    IEnumerator test()
-    {
-        yield return new WaitForSeconds(5f);
-        HideCharacter(Character.FATHER, Side.LEFT);
-    }
 
 
     // Update is called once per frame

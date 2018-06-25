@@ -8,10 +8,10 @@ public class Scene_TaskQuestion : SceneScriptBase {
     // Use this for initialization
     [SerializeField] public List<Image> options;
     public AudioSource audioSource;
-    public AudioClip Testaudio; 
+    //public AudioClip Testaudio; 
     void Start()
     {
-        Test();
+        //Test();
         for (int i = 0; i < options.Count; i++)
         {
             Image temp = options[i];
@@ -19,9 +19,10 @@ public class Scene_TaskQuestion : SceneScriptBase {
             options[i] = options[randomIndex];
             options[randomIndex] = temp;
         }
-        audioSource.clip = Testaudio;
+        //audioSource.clip = Testaudio;
+        audioSource.clip = ASGlobal.Instance.taskData.step2audio.audioRecorder.audio;
         audioSource.Play();
-        //audioSource.clip = ASGlobal.Instance.taskData.step2audio.audioRecorder.audio;
+
 
         for (int j = 0; j < 4; j++){
             var k = ASGlobal.Instance.taskData.step2data[j];
@@ -46,14 +47,6 @@ public class Scene_TaskQuestion : SceneScriptBase {
 		
 	}
 
-    void Test (){
-        ASGlobal.Instance.taskData.step2data = new Dictionary<int, ObjectOption>(){
-            {1,ObjectOption.TV},
-            {0,ObjectOption.LAMP},
-            {2,ObjectOption.RAG},
-            {3,ObjectOption.TELE}
-        };
-    }
 
     public void Back(){
         NextScene("06_TaskCon");
