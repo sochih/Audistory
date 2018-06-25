@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Scene_TaskQuestion : MonoBehaviour {
+public class Scene_TaskQuestion : SceneScriptBase {
 
     // Use this for initialization
     [SerializeField] public List<Image> options;
@@ -20,21 +20,22 @@ public class Scene_TaskQuestion : MonoBehaviour {
             options[randomIndex] = temp;
         }
         audioSource.clip = Testaudio;
+        audioSource.Play();
         //audioSource.clip = ASGlobal.Instance.taskData.step2audio.audioRecorder.audio;
 
         for (int j = 0; j < 4; j++){
             var k = ASGlobal.Instance.taskData.step2data[j];
             options[j].sprite = ASGlobal.Instance.objectSpriteDict[k];
-            options[j].name = k.ToString();
+            options[j].name = j.ToString();
         }
 
 	}
 
     public void Select ( GameObject g ){
         if (g.name.Equals("0") ){
-            
+            NextScene("08_TaskEnding");
         }else {
-
+            WrongFeedBack.Instance.Open();
 
 
         }
@@ -52,5 +53,12 @@ public class Scene_TaskQuestion : MonoBehaviour {
             {2,ObjectOption.RAG},
             {3,ObjectOption.TELE}
         };
+    }
+
+    public void Back(){
+        NextScene("06_TaskCon");
+    }
+    public void Leave (){
+        NextScene("01_TaskList");
     }
 }
