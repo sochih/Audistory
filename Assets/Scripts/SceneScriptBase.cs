@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 using AudiStory; 
 
-namespace AudiStory {
+//namespace AudiStory {
     
     public class SceneScriptBase : MonoBehaviour {
 
@@ -25,4 +25,4 @@ namespace AudiStory {
         }
     }
 
-}
+//}

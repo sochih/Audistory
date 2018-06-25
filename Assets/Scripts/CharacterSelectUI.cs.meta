@@ -1,10 +1,16 @@
 fileFormatVersion: 2
 guid: 6e43c4ce7a9ab4bd89621800bc0a7f63
-timeCreated: 1529845665
+timeCreated: 1529932432
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - charImage: {instanceID: 0}
+  - father: {instanceID: 0}
+  - mother: {instanceID: 0}
+  - brother: {instanceID: 0}
+  - sister: {instanceID: 0}
+  - grandma: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

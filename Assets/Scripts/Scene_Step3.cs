@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scene_Step3 : MonoBehaviour {
+public class Scene_Step3 : SceneScriptBase {
 
     // Use this for initialization
 
@@ -16,4 +16,9 @@ public class Scene_Step3 : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void Save (){
+        ASGlobal.Instance.taskData.step3audio = bubUI.conversationBub;
+        NextScene("01_TaskList");
+    }
 }

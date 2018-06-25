@@ -48,15 +48,12 @@ public class CharacterSelectUI : MonoBehaviour {
         ObjectSelecter.Instance.Open(UpdateImage);
     }
 
-    void UpdateImage (Character c){
+    void UpdateImage (int i){
+        Character c = (Character)i;
         Sprite sprite; 
         charSpriteDict.TryGetValue(c , out  sprite);
         charImage.sprite = sprite;
         conversationBubData.character = c;
-    }
-
-    void HandleAction(Character c)
-    {
     }
 
 }

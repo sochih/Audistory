@@ -40,6 +40,7 @@ public class Scene_Step1 : SceneScriptBase {
             data.Add(b.conversationBub);
         }
         ASGlobal.Instance.taskData.step1audios = data; 
+        NextScene("04_Step2");
     }
 
 }

@@ -16,17 +16,17 @@ public class ObjectSelecter : MonoBehaviour {
         Hide();
 	}
 
-    public Action<Character> callBackFunc; 
-    public void Open (  Action<Character> action){
+    public Action<int> callBackFunc; 
+    public void Open (  Action<int> action){
         this.callBackFunc = action;
         Show();
     }
 
     public void Select (int i) {
-        var c = (Character)i;
+        //var c = (Charcter)i;
         Hide();
         if (callBackFunc != null){
-            callBackFunc(c);
+            callBackFunc(i);
         }
     }
 

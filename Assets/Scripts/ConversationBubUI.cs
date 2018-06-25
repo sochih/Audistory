@@ -149,7 +149,7 @@ public class ConversationBubUI : MonoBehaviour
             return;
         }
 
-        if ( conversationBub.audioRecorder.audio != null){
+        if (  conversationBub.audioRecorder.audio != null){
             var a = conversationBub.audioRecorder.audio;
             audioSource.clip = a;
             audioSource.Play();
