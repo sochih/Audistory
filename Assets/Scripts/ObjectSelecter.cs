@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSelecter : MonoBehaviour {
+public class ObjectSelecter : MonoBehaviour {
 
     // Use this for initialization
 
-    public static CharacterSelecter Instance;
+    public static ObjectSelecter Instance;
     public CanvasGroup canvasGroup; 
 	private void Awake()
 	{

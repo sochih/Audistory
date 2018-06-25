@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public enum Character
 {
-    FATHER = 0,
-    MOTHER = 1,
+    MOTHER = 0,
+    FATHER = 1,
     BROTHER = 2,
     SISTER = 3,
     GRANDMA = 4

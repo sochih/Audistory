@@ -34,5 +34,12 @@ public class Scene_Step1 : SceneScriptBase {
         createBtn.SetAsLastSibling();
     }
 
+    public void Save (){
+        List<ConversationBubData> data = new List<ConversationBubData>(); 
+        foreach (var b in  conversationSqure_con.GetComponentsInChildren<ConversationBubUI>() ) {
+            data.Add(b.conversationBub);
+        }
+        ASGlobal.Instance.taskData.step1audios = data; 
+    }
 
 }

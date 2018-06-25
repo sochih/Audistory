@@ -45,7 +45,7 @@ public class CharacterSelectUI : MonoBehaviour {
 		
 	}
     public void Select() {
-        CharacterSelecter.Instance.Open(UpdateImage);
+        ObjectSelecter.Instance.Open(UpdateImage);
     }
 
     void UpdateImage (Character c){
