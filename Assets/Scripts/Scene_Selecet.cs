@@ -24,7 +24,7 @@ public class Scene_Selecet : SceneScriptBase {
 
     public void Btn_NextScene (){
         
-        ASCreater.Instance.taskData.name = taskNameInputField.text;
+        ASGlobal.Instance.taskData.name = taskNameInputField.text;
         NextScene("03_Step1");
 
     }

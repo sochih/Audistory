@@ -30,8 +30,9 @@ GameObject sisL;
 GameObject broL;
 GameObject grandmaL;
 
-void MoveAnimation(GameObject g, Side s)
-{	
+    void ShowAnim(GameObject g, Side s)
+{
+        
     Debug.Log ("g" + g);
     Debug.Log ("ss" + stopPositionL);
     if (s == Side.LEFT )
@@ -42,62 +43,144 @@ void MoveAnimation(GameObject g, Side s)
 	{
 	LeanTween.move(g, stopPositionR, 2f).setEase(LeanTweenType.easeOutQuad);
 	}
+
 }
 
 
-void DecideCharacter(Character cc, Side ss){
+    void HideAnim(GameObject g, Side s)
+    {
+
+        Debug.Log("g" + g);
+        Debug.Log("ss" + stopPositionL);
+        if (s == Side.LEFT)
+        {
+            LeanTween.move(g, startPositionL, 2f).setEase(LeanTweenType.easeOutQuad);
+        }
+        else
+        {
+            LeanTween.move(g, startPositionR, 2f).setEase(LeanTweenType.easeOutQuad);
+        }
+
+    }
+
+
+    void HideCharacter(Character cc, Side ss)
+    {
+
+
+
+        var L = Side.LEFT;
+        var R = Side.RIGHT;
+        int c = (int)cc;
+        int s = (int)ss;
+        if (c == 0 && s == 0)
+        {
+            HideAnim(dadL, L);
+        }
+
+        else if (c == 0 && s == 1)
+        {
+            HideAnim(dadR, R);
+        }
+
+        else if (c == 1 && s == 0)
+        {
+            HideAnim(momL, L);
+        }
+
+        else if (c == 1 && s == 1)
+        {
+            HideAnim(momR, R);
+        }
+
+        else if (c == 2 && s == 0)
+        {
+            HideAnim(broL, L);
+        }
+
+        else if (c == 2 && s == 1)
+        {
+            HideAnim(broR, R);
+        }
+
+        else if (c == 3 && s == 0)
+        {
+            HideAnim(sisL, L);
+        }
+
+        else if (c == 3 && s == 1)
+        {
+            HideAnim(sisR, R);
+        }
+
+        else if (c == 4 && s == 0)
+        {
+            HideAnim(grandmaL, L);
+        }
+
+        else
+        {
+            HideAnim(grandmaR, R);
+        }
+    }
+
+
+    void ShowCharacter(Character cc, Side ss){
+
+
+
 		var L = Side.LEFT ;
 		var R = Side.RIGHT ; 
 		int c = (int)cc ;
 		int s = (int)ss ; 
 		if (c == 0 && s == 0)
 		{
-			MoveAnimation(dadL, L);
+			ShowAnim(dadL, L);
 		}
 	
 		else if (c == 0 && s == 1)
 		{
-			MoveAnimation(dadR,R);
+			ShowAnim(dadR,R);
 		}
 		
 		else if (c == 1 && s == 0)
 		{
-			MoveAnimation(momL,L);
+			ShowAnim(momL,L);
 		}
 		
 		else if (c == 1 && s == 1)
 		{
-			MoveAnimation(momR,R);
+			ShowAnim(momR,R);
 		}
 		
 		else if (c == 2 && s == 0)
 		{
-			MoveAnimation(broL,L);
+			ShowAnim(broL,L);
 		}
 		
 		else if (c == 2 && s == 1)
 		{
-			MoveAnimation(broR,R);
+			ShowAnim(broR,R);
 		}
 		
 		else if (c == 3 && s == 0)
 		{
-			MoveAnimation(sisL,L);
+			ShowAnim(sisL,L);
 		}
 		
 		else if (c == 3 && s == 1)
 		{
-			MoveAnimation(sisR,R);
+			ShowAnim(sisR,R);
 		}
 		
 		else if (c == 4 && s == 0)
 		{
-			MoveAnimation(grandmaL,L);
+			ShowAnim(grandmaL,L);
 		}
 		
 		else
 		{
-			MoveAnimation(grandmaR,R);
+			ShowAnim(grandmaR,R);
 		}	
 }
 
@@ -114,9 +197,16 @@ void DecideCharacter(Character cc, Side ss){
 		broL = GameObject.Find("BroL");
 		grandmaL = GameObject.Find("GrandmaL");
 		
-		DecideCharacter(Character.FATHER, Side.LEFT);
-		
+        ShowCharacter(Character.FATHER, Side.LEFT);
+        StartCoroutine(test());
 	}
+
+    IEnumerator test () 
+        {
+            yield return new WaitForSeconds(5f);
+            HideCharacter(Character.FATHER, Side.LEFT);
+        }
+
 	
 	// Update is called once per frame
 	void Update () {

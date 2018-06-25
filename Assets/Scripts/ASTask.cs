@@ -4,11 +4,7 @@ using UnityEngine;
 using AudiStory; 
 
 namespace AudiStory {
-    public class ASTask
-    {
-        public string name; 
-
-    }    
+  
 }
 
 

@@ -85,7 +85,7 @@ public class ConversationBubUI : MonoBehaviour
         {
             return;
         }
-        Debug.Log("ConversationBubUI update");
+        //Debug.Log("ConversationBubUI update");
 
 
         UpdateRecorderUI(); 
